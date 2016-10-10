@@ -39,7 +39,6 @@ int main(void)
     InitUART2();
     while (1)
     {   
-        // Setting continuous measurement mode
         if(get_field_x(&mag_x) == I2C_ERROR){
             WriteStringUART2("Error getting x mag\r\n");
         }

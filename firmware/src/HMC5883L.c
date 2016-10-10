@@ -20,6 +20,16 @@ int two_comp_to_dec(int b){
 		return b;
 }
 
+/**
+ * Sets a parameter for the sensor such as resolution, data output rate,
+ * mode of operation, etc. 
+ * @param reg HMC5883L register value where the parameter is stored
+ * @param param This is actually an 8 bit mask that allows user to 
+ *              change just a certain number of bits in the register
+ * @param val  8 bit value holding the parameter value and the rest of the bits
+ *              zeros
+ * @return      1 is ok, -1 on error
+ */
 int set_parameter(char reg, char param, unsigned char val){
     char tmp;
     if(I2C_ReadReg(HMC5883L, reg, &tmp) == I2C_ERROR){
@@ -50,6 +60,11 @@ int initHMC5883L(void){
     return set_parameter(HMC5883L_MODE, MODE, 0);        
 }
 
+/**
+ * Retrieve the magnetic field magnitude for x axis in mG
+ * @param val Pointer to float variable where we write the result
+ * @return 1 if ok, -1 if error
+ */
 int get_field_x(float *val){
     char msb, lsb;
     int tmp;
@@ -66,6 +81,11 @@ int get_field_x(float *val){
     return I2C_OK;
 }
 
+/**
+ * Retrieve the magnetic field magnitude for Y axis in mG
+ * @param val Pointer to float variable where we write the result
+ * @return 1 if ok, -1 if error
+ */
 int get_field_y(float *val){
     char msb, lsb;
     int tmp;
@@ -82,6 +102,11 @@ int get_field_y(float *val){
     return I2C_OK;
 }
 
+/**
+ * Retrieve the magnetic field magnitude for Z axis in mG
+ * @param val Pointer to float variable where we write the result
+ * @return 1 if ok, -1 if error
+ */
 int get_field_z(float *val){
     char msb, lsb;
     int tmp;
