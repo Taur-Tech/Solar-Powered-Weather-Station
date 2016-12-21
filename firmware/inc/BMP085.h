@@ -38,22 +38,8 @@
 #define BMP085_BUF_LSB      0xF7
 #define BMP085_BUF_XLSB     0xF8
 
-struct bmp085_cal{
-    short ac1;
-    short ac2;
-    short ac3;
-    unsigned short ac4;
-    unsigned short ac5;
-    unsigned short ac6;
-    short b1;
-    short b2;
-    short mb;
-    short mc;
-    short md;
-}BMP085CAL;
 
 int initBMP085(void);
-int get_temperature(long *t);
-int get_pressure(long *p);
+int get_bmp085_data(unsigned long *p, long *t);
 
 #endif	

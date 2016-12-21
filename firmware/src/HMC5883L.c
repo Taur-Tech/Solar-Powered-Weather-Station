@@ -30,7 +30,7 @@ int two_comp_to_dec(int b){
  *              zeros
  * @return      1 is ok, -1 on error
  */
-int set_parameter(char reg, char param, unsigned char val){
+int set_parameter(unsigned char reg, unsigned char param, unsigned char val){
     char tmp;
     if(I2C_ReadReg(HMC5883L, reg, &tmp) == I2C_ERROR){
         return I2C_ERROR;
