@@ -2,7 +2,7 @@
 
 void initADC(void){    
     ADCON1bits.ADON = 0; // turn ADC off
-    ADPCFG = 0xFEFD; // all PORTB = Digital; RB8 = analog
+    ADPCFG = 0xFEFC; // all PORTB = Digital; RB8 = analog
     ADCON2bits.VCFG = 0b000; // Vref+ = AVdd, Vref- = AVss
     ADCON1bits.FORM = 0b00; // integer data format
     ADCON1bits.SSRC = 0b111;  // auto convert
@@ -24,6 +24,15 @@ void stopADC(void){
 void setChADC(int channel, int diff){
     ADCHSbits.CH0NA = diff;
     ADCHSbits.CH0SA = channel;
+}
+
+void setVrefADC(int cfg){
+    ADCON1bits.ADON = 0; 
+    if(cfg == 0)        
+        ADCON2bits.VCFG = 0b000;
+    else
+        ADCON2bits.VCFG = 0b001;
+    ADCON1bits.ADON = 1; 
 }
 
 int getADC(){

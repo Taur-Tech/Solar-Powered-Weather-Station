@@ -53,13 +53,13 @@ int main(void)
     else{
          WriteStringUART2("BMP085 Init OK2\r\n");
     }
-    __delay_ms(10);
-    if(initSI7021() == I2C_ERROR){
-        WriteStringUART2("Error init SI7021\r\n");
-    }
-    else{
-         WriteStringUART2("SI7021 Init OK\r\n");
-    }
+//    __delay_ms(10);
+//    if(initSI7021() == I2C_ERROR){
+//        WriteStringUART2("Error init SI7021\r\n");
+//    }
+//    else{
+//         WriteStringUART2("SI7021 Init OK\r\n");
+//    }
     __delay_ms(100);
     while (1)
     {   
@@ -92,14 +92,14 @@ int main(void)
         __delay_ms(100);
         WriteStringUART2(buf);
         __delay_ms(10);
-        if(get_humidity(&hum, &h_temp) == I2C_ERROR){
-            WriteStringUART2("Error getting humidity\r\n");
-        }
-        else{
-            sprintf(buf, "SI7021 Data Humidity: %f Temperature: %f\r\n", hum, h_temp);
-            __delay_ms(100);
-            WriteStringUART2(buf);
-        }
+//        if(get_humidity(&hum, &h_temp) == I2C_ERROR){
+//            WriteStringUART2("Error getting humidity\r\n");
+//        }
+//        else{
+//            sprintf(buf, "SI7021 Data Humidity: %f Temperature: %f\r\n", hum, h_temp);
+//            __delay_ms(100);
+//            WriteStringUART2(buf);
+//        }
         __delay_ms(1000);
     }
     return 0;
