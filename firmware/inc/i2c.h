@@ -17,6 +17,8 @@ void I2C_Init(void);
 int setBaudRate(void);
 int I2C_WriteReg(char dev_addr, char reg_addr, char value);
 int I2C_ReadReg(char dev_addr, char reg_addr, char *value);
+int I2C_ReadReg16(char dev_addr, char reg_addr, int *value);
+int I2C_ReadReg16_Repeat(char dev_addr, char reg_addr, int *value, int repeat_no);
 
 
 

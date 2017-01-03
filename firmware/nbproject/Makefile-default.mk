@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/main.c src/i2c.c src/BMP085.c src/HMC5883L.c src/uart.c src/adc.c src/anemometer.c
+SOURCEFILES_QUOTED_IF_SPACED=src/main.c src/i2c.c src/BMP085.c src/HMC5883L.c src/uart.c src/adc.c src/anemometer.c src/SI7021.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/i2c.o ${OBJECTDIR}/src/BMP085.o ${OBJECTDIR}/src/HMC5883L.o ${OBJECTDIR}/src/uart.o ${OBJECTDIR}/src/adc.o ${OBJECTDIR}/src/anemometer.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/src/i2c.o.d ${OBJECTDIR}/src/BMP085.o.d ${OBJECTDIR}/src/HMC5883L.o.d ${OBJECTDIR}/src/uart.o.d ${OBJECTDIR}/src/adc.o.d ${OBJECTDIR}/src/anemometer.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/i2c.o ${OBJECTDIR}/src/BMP085.o ${OBJECTDIR}/src/HMC5883L.o ${OBJECTDIR}/src/uart.o ${OBJECTDIR}/src/adc.o ${OBJECTDIR}/src/anemometer.o ${OBJECTDIR}/src/SI7021.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/src/i2c.o.d ${OBJECTDIR}/src/BMP085.o.d ${OBJECTDIR}/src/HMC5883L.o.d ${OBJECTDIR}/src/uart.o.d ${OBJECTDIR}/src/adc.o.d ${OBJECTDIR}/src/anemometer.o.d ${OBJECTDIR}/src/SI7021.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/i2c.o ${OBJECTDIR}/src/BMP085.o ${OBJECTDIR}/src/HMC5883L.o ${OBJECTDIR}/src/uart.o ${OBJECTDIR}/src/adc.o ${OBJECTDIR}/src/anemometer.o
+OBJECTFILES=${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/i2c.o ${OBJECTDIR}/src/BMP085.o ${OBJECTDIR}/src/HMC5883L.o ${OBJECTDIR}/src/uart.o ${OBJECTDIR}/src/adc.o ${OBJECTDIR}/src/anemometer.o ${OBJECTDIR}/src/SI7021.o
 
 # Source Files
-SOURCEFILES=src/main.c src/i2c.c src/BMP085.c src/HMC5883L.c src/uart.c src/adc.c src/anemometer.c
+SOURCEFILES=src/main.c src/i2c.c src/BMP085.c src/HMC5883L.c src/uart.c src/adc.c src/anemometer.c src/SI7021.c
 
 
 CFLAGS=
@@ -137,6 +137,13 @@ ${OBJECTDIR}/src/anemometer.o: src/anemometer.c  nbproject/Makefile-${CND_CONF}.
 	${MP_CC} $(MP_EXTRA_CC_PRE)  src/anemometer.c  -o ${OBJECTDIR}/src/anemometer.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/src/anemometer.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mlarge-data -mlarge-scalar -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/src/anemometer.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/src/SI7021.o: src/SI7021.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/SI7021.o.d 
+	@${RM} ${OBJECTDIR}/src/SI7021.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/SI7021.c  -o ${OBJECTDIR}/src/SI7021.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/src/SI7021.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mlarge-data -mlarge-scalar -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/src/SI7021.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/src" 
@@ -186,6 +193,13 @@ ${OBJECTDIR}/src/anemometer.o: src/anemometer.c  nbproject/Makefile-${CND_CONF}.
 	@${RM} ${OBJECTDIR}/src/anemometer.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  src/anemometer.c  -o ${OBJECTDIR}/src/anemometer.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/src/anemometer.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mlarge-data -mlarge-scalar -O0 -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/src/anemometer.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/src/SI7021.o: src/SI7021.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/SI7021.o.d 
+	@${RM} ${OBJECTDIR}/src/SI7021.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/SI7021.c  -o ${OBJECTDIR}/src/SI7021.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/src/SI7021.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mlarge-data -mlarge-scalar -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/src/SI7021.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

@@ -11,6 +11,7 @@
       <itemPath>inc/uart.h</itemPath>
       <itemPath>inc/adc.h</itemPath>
       <itemPath>inc/anemometer.h</itemPath>
+      <itemPath>inc/SI7021.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -26,6 +27,7 @@
       <itemPath>src/uart.c</itemPath>
       <itemPath>src/adc.c</itemPath>
       <itemPath>src/anemometer.c</itemPath>
+      <itemPath>src/SI7021.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

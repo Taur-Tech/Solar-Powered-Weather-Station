@@ -37,7 +37,7 @@ int main(void)
     int mag;
     char msb;
     char lsb;
-    float mag_x, mag_y, mag_z, wind_speed;
+    float mag_x, mag_y, mag_z, wind_speed, hum, h_temp;
     long t;
     unsigned long p;
     initADC();
@@ -53,8 +53,14 @@ int main(void)
     else{
          WriteStringUART2("BMP085 Init OK2\r\n");
     }
+    __delay_ms(10);
+    if(initSI7021() == I2C_ERROR){
+        WriteStringUART2("Error init SI7021\r\n");
+    }
+    else{
+         WriteStringUART2("SI7021 Init OK\r\n");
+    }
     __delay_ms(100);
-    
     while (1)
     {   
         if(get_field_x(&mag_x) == I2C_ERROR){
@@ -74,10 +80,10 @@ int main(void)
         WriteStringUART2(buf);
         __delay_ms(10);
         if(get_bmp085_data(&p, &t) == I2C_ERROR){
-            WriteStringUART2("Error getting x mag\r\n");
+            WriteStringUART2("Error getting pressure\r\n");
         }
         __delay_ms(10);
-        sprintf(buf, "BMP085 Data temp:%ld pressure:%lu\r\n",t,p);
+        sprintf(buf, "BMP085 Data Temperature:%ld Pressure:%lu\r\n",t,p);
         __delay_ms(100);
         WriteStringUART2(buf);
         __delay_ms(10);
@@ -85,6 +91,15 @@ int main(void)
         sprintf(buf, "Wind Speed Sensor Raw: %f\r\n",wind_speed);
         __delay_ms(100);
         WriteStringUART2(buf);
+        __delay_ms(10);
+        if(get_humidity(&hum, &h_temp) == I2C_ERROR){
+            WriteStringUART2("Error getting humidity\r\n");
+        }
+        else{
+            sprintf(buf, "SI7021 Data Humidity: %f Temperature: %f\r\n", hum, h_temp);
+            __delay_ms(100);
+            WriteStringUART2(buf);
+        }
         __delay_ms(1000);
     }
     return 0;
