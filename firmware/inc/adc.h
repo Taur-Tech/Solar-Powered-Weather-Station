@@ -9,7 +9,8 @@
 #define	ADC_H
 #include <xc.h>
 
-#define Y_RESOLUTION (float)1.22070312
+#define Y_RESOLUTION_AVDD (float)1.22070312
+#define Y_RESOLUTION_VREF (float)0.61035156
 
 void initADC(void);
 void startADC(void);

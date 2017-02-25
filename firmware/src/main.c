@@ -45,6 +45,7 @@ int main(void)
     __delay_ms(10);
     InitUART2();
     __delay_ms(10);
+    WriteStringUART2("Starting system\r\n");
     initHMC5883L();
     __delay_ms(10);
     if(initBMP085() == I2C_ERROR){

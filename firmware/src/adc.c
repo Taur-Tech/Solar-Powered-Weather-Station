@@ -47,6 +47,6 @@ float getADCVolt(){
     ADCON1bits.SAMP = 1;
     while(!ADCON1bits.DONE);
     buf = ADCBUF0;
-    vout = (float)buf*Y_RESOLUTION;
+    vout = (float)buf*Y_RESOLUTION_AVDD;
     return vout;
 }
