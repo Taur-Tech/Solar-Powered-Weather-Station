@@ -20,7 +20,7 @@
 #define SI7021_USER_R       0xE7
 #define SI7021_HEATER_W     0x51
 #define SI7021_HEATER_R     0x11
-#define MEAS_RETRY          0xFF
+#define MEAS_RETRY          0x04
 
 /**
  * Initialize the device with specific settings.

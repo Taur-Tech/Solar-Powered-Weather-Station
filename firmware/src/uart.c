@@ -5,7 +5,7 @@
 #define FCY             (unsigned long)7372800 //default FCY 10MHz
 #endif
 #define UART1_BAUD 115200
-#define UART2_BAUD 9600
+#define UART2_BAUD 115200
 #define UBRG1_VALUE (FCY/UART1_BAUD)/16 - 1
 #define UBRG2_VALUE (FCY/UART2_BAUD)/16 - 1
 
