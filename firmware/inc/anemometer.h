@@ -5,8 +5,8 @@
  * Revision history: 
  */
 
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef ANEMOMETER_H
+#define	ANEMOMETER_H
 
 #include <xc.h>  
 
@@ -26,6 +26,6 @@ float getAnemometerAvg(void);
 }
 #endif /* __cplusplus */
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+#endif	/* ANEMOMETER_H */
 
 

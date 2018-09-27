@@ -42,7 +42,7 @@ int getADC(){
 }
 
 float getADCVolt(){
-    int buf;
+    unsigned int buf;
     float vout;
     ADCON1bits.SAMP = 1;
     while(!ADCON1bits.DONE);
@@ -50,3 +50,4 @@ float getADCVolt(){
     vout = (float)buf*Y_RESOLUTION_AVDD;
     return vout;
 }
+

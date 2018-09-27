@@ -2,7 +2,8 @@
 #include <math.h>
 #include "../inc/uart.h"
 #ifndef FCY
-#define FCY             (unsigned long)7372800 //default FCY 10MHz
+#define FCY             (unsigned long)8000000 //default FCY 10MHz
+//#define FCY 60000000ULL
 #endif
 #define UART1_BAUD 115200
 #define UART2_BAUD 115200
@@ -34,6 +35,8 @@ void WriteStringUART1(const char * s)
 
 void InitUART2(void)
 {
+    TRISFbits.TRISF4 = 1;
+    TRISFbits.TRISF5 = 0;
     U2BRG = UBRG2_VALUE; 
     U2STA &= 0xfffc;
     IEC1bits.U2RXIE = 1; 
